@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <div class="container">
+          <br><hr>
+        <center>
+        <div class="well well-lg" style="background-color:lightblue;">
+            <h2><b>To Do List</b></h2>
+        </div>
+        <hr>
+                <br>
+        <div class="table-responsive">
+          <table class="table  table-hover table-bordered table-striped" style="text-align:center;">
+              {% for todo in todos %}
+              <tr>
+                <td>{{ todo }}</td>
+              </tr>
+              {% endfor %}
+          </table>
+        </div>
+        <br>
+
+       <button class="btn btn-info"><a href="/add" style="color:black; text-decoration: none;">Create a New Task</a></button>
+
+       <button class="btn btn-info"><a href="/delete" style="color:black; text-decoration: none;">Delete Task</a></button>
+
+       <button class="btn btn-info"><a href="/deleteAll" style="color:black; text-decoration: none;">Delete All Tasks</a></button>
+
+        </center>
+    </div>
+
+
+{% endblock %}

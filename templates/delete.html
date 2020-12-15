@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <form action="/delete" method="post">
+        <div class="container">
+        <br><br><br>
+        <hr>
+        <center>
+        <div class="well well-lg" style="background-color:lightblue;">
+            <h2><b>Enter the task details</b></h2>
+        </div><hr><br>
+        <div class="form-group">
+            <div class="col-sm-10">
+              <input id="todel" name="todel" type="text" placeholder="Task Name">
+            </div>
+         </div>
+
+        <div class="form-group">
+            <div class="col-sm-10">
+              <input id="submit" type="submit" disabled class="btn btn-info">
+            </div>
+         </div>
+         <hr>
+        </center>
+        </div>
+    </form>
+    <script>
+        document.querySelector('#todel').onkeyup = function() {
+            if (document.querySelector('#todel').value === '') {
+                document.querySelector('#submit').disabled = true;
+            } else {
+                document.querySelector('#submit').disabled = false;
+            }
+        }
+    </script>
+{% endblock %}
